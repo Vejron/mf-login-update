@@ -1,0 +1,15 @@
+{
+  "name": "mf-login-lite",
+  "version": "1.0.0",
+  "description": "test for updated maxifleet login",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Björn Yttergren",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
