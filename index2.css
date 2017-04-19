@@ -1,0 +1,384 @@
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #282828;
+  position: fixed;
+  z-index: 10;
+}
+
+/* Form */
+.login-container {
+  margin-top: 140px;
+  position: relative;
+  padding: 35px;
+  background: rgba(0,0,0,.7);
+  border-radius: 3px;
+  width: 310px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.login-header {
+  margin-bottom: 24px;
+}
+.login-header img {
+  width: 100%;
+}
+
+.password-link {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 2em;
+}
+.label {
+  position: absolute;
+  height: 2rem;
+  line-height: 2rem;
+  bottom: 0;
+  left: 0;
+  color: #999;
+  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.input {
+  width: 100%;
+  font-size: 100%;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 2rem;
+  line-height: 2rem;
+  border-bottom: 2px solid #ccc;
+  color: #ccc;
+  transition: all .2s ease-in;
+}
+.input:focus {
+  outline: 0;
+  border-bottom: 2px solid #eee;
+}
+
+/* Using required and a faux pattern to see if input has text from http://stackoverflow.com/questions/16952526/detect-if-an-input-has-text-in-it-using-css */
+.input:focus + .label,
+input:valid + .label {
+  transform: translateY(-80%);
+  font-size: 0.75rem;
+  color: #ccc;
+}
+
+/* Button */
+.btn {
+  border: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 100%;
+  height: 3.0rem;
+  line-height: 2.5rem;
+  padding: 0 1.5rem;
+  color: #eee;
+  background: hsl(356, 81%, 50%);
+  border-radius: 3px;
+  letter-spacing: .1em;
+  transition: background .2s;
+  margin-bottom: 2em;
+}
+.btn:focus {
+  outline: 0;
+}
+.btn:hover,
+.btn:focus {
+  background: hsl(356, 74%, 70%);
+}
+
+
+/*** news ****/
+.news-teaser {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+.news-teaser > a {
+  padding: 1.5em;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.7);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.news-teaser .chevron-down {
+  position: relative;
+  top: 0;
+  width: 4em;
+  height: 4em;
+  fill: #eee;
+  animation: tease 14s 0.4s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes tease {
+  0% { top:0; }
+  2% { top:10%; }
+  4% { top:0; }
+  6% { top:10%; }
+  8% { top:-10%; }
+  10% { top:10%; }
+  12% { top:0; }
+  14% { top:10%; }
+  16% { top:-10%; }
+  18% { top:10%; }
+  20% { top:0; }
+}
+
+.news-section {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+}
+.news-section .container.article-header {
+  background-color: #ebebeb;
+}
+.news-section .container.articles {
+  background-color: white;
+}
+
+.news-section-header {
+  text-align: center;
+  background-color: #ebebeb;
+  width: 100%;
+}
+.news-section-header h1 {
+  font-size: 33px;
+  padding: 25px;
+}
+
+.news-item {
+  background-color: white;
+  color: #282828;
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  line-height: 1.4;
+  border-bottom: 1px solid #d2d2d2;
+}
+.news-header {
+  font-size: 23px;
+  color: red;
+  margin-bottom: 5px;
+}
+.news-type {
+  display: inline-block;
+  background-color: #ebebeb;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.news-date {
+  color: #757575;
+  margin-bottom: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.news-summary {
+  padding: 10px 0 15px;
+}
+.news-image {
+  padding: 10px 0 15px;
+  width: 300px;
+  align-self: center;
+  margin-left: 10px;
+}
+@media (max-width: 600px) {
+  img.news-image {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+@media (max-height: 700px) {
+  .login-container {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 420px) {
+  .login-container {
+    margin-top: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+/* Landscape */
+@media only screen 
+  /*and (min-device-width: 320px) 
+  and (max-device-width: 768px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {*/
+  and (max-height: 500px) {
+  .flex-between {
+    display: block;
+  }
+  .login-container {
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    text-align: initial;
+  }
+  .login-header img {
+    width: 180px;
+  }
+  .password-link {
+    float: right;
+  }
+  .field {
+    display: inline-block;
+    width: 49%;
+    padding-right: 10px;
+  }
+}
+
+
+
+
+
+
+/* You can add global styles to this file, and also import other style files */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**************************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url("assets/Komatsu-operator-hood-view.jpg") 0 / cover fixed;
+  background-position: center; 
+  height: 100%;
+  width: 100%;
+}
+
+.flex-grid {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+}
+
+.contain {
+  overflow: hidden;
+}
+
+.fill-height {
+  height: 100%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .flex-grid {
+    display: block;
+  }
+}
+
+/* bs stuff */
+.navbar-brand {
+  float: left;
+  display: block;
+  padding: 20px 0;
+  padding-top: 15px;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 1020px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1180px;
+  }
+}
